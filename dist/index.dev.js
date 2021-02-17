@@ -10,10 +10,12 @@ var rootElement = document.getElementById('app'); // const myElement = document.
 //     'Hello world!'
 // );
 
-var Hello = function Hello() {
+var Hello = function Hello(props) {
   return React.createElement('h1', {
     className: 'orange'
-  }, 'Hello world!');
+  }, "Hello ".concat(props.time));
 };
 
-ReactDOM.render(React.createElement(Hello, {}, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(Hello, {
+  time: new Date().toLocaleDateString()
+}, null), document.getElementById('app'));

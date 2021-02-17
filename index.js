@@ -11,15 +11,15 @@ const rootElement = document.getElementById('app');
 //     'Hello world!'
 // );
 
-const Hello = () => {
+const Hello = (props) => {
   return React.createElement(
     'h1',
     {className: 'orange'},
-    'Hello world!'
+    `Hello ${props.time}`
   )
 }
 
 ReactDOM.render(
-  React.createElement(Hello, {}, null),
+  React.createElement(Hello, {time: new Date().toLocaleDateString()}, null),
   document.getElementById('app')
 );
