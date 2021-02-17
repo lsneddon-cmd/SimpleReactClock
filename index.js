@@ -11,12 +11,22 @@ const rootElement = document.getElementById('app');
 //     'Hello world!'
 // );
 
-const Hello = (props) => {
-  return React.createElement(
-    'h1',
-    {className: 'orange'},
-    `Hello ${props.time}`
-  )
+// const Hello = (props) => {
+//   return React.createElement(
+//     'h1',
+//     {className: 'orange'},
+//     `Hello ${props.time}`
+//   )
+// }
+
+class Hello extends React.Component {
+  render() {
+    return React.createElement(
+      'h1',
+      {className: 'orange'},
+      `Hello ${this.props.time}`
+    )
+  }
 }
 
 ReactDOM.render(
