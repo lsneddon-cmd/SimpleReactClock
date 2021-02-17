@@ -6,14 +6,14 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: new Date().toLocaleString()
+      time: new Date()
     }
   }
 
   tick() {
     this.setState( () => {
       return ({
-        time: new Date().toLocaleString()
+        time: new Date()
       })
     })
   }
