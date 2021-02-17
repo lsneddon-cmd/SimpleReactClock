@@ -71,6 +71,11 @@ function (_React$Component) {
       }, 1000);
     }
   }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(this.interval);
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement('h1', {

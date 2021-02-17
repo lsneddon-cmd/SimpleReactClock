@@ -40,6 +40,10 @@ class Hello extends React.Component {
     this.interval = setInterval( () => this.tick(), 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
     return React.createElement(
       'h1',
