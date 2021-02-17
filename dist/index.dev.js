@@ -40,24 +40,46 @@ var Hello =
 function (_React$Component) {
   _inherits(Hello, _React$Component);
 
-  function Hello() {
+  function Hello(props) {
+    var _this;
+
     _classCallCheck(this, Hello);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Hello).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Hello).call(this, props));
+    _this.state = {
+      time: new Date().toLocaleString()
+    };
+    return _this;
   }
 
   _createClass(Hello, [{
+    key: "tick",
+    value: function tick() {
+      this.setState(function () {
+        return {
+          time: new Date().toLocaleString()
+        };
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.interval = setInterval(function () {
+        return _this2.tick();
+      }, 1000);
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement('h1', {
         className: 'orange'
-      }, "Hello ".concat(this.props.time));
+      }, "Hello ".concat(this.state.time));
     }
   }]);
 
   return Hello;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Hello, {
-  time: new Date().toLocaleDateString()
-}, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(Hello, {}, null), document.getElementById('app'));
