@@ -30,4 +30,4 @@ class Index extends React.Component {
   }
 }
 
-export default index;
+export default Index;
